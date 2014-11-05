@@ -1,0 +1,37 @@
+{{!< default}}
+
+<main>
+	<article class="{{post_class}} full">
+	{{#post}}
+	<header>
+		<p class="date">
+			<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time>
+		</p>
+		<h1>{{{title}}}</h1>
+		{{#if tags}}
+		<p class="tags">{{tags separator=""}}</p>
+		{{/if}}
+	</header>
+	<section class="content">
+		{{content}}
+	</section>
+	<footer class="metadata">
+	{{#author}}
+		<section class="author">
+			{{#if image}}
+			<a href="{{url}}">
+				<figure class="avatar" style="background-image: url('{{image}}')">
+					<img src="{{image}}" alt="avatar" />
+				</figure>
+			</a>
+			{{/if}}
+			<h4 class="name"><a href="{{url}}">{{name}}</a></h4>
+			{{#if bio}}
+			<p class="bio">{{bio}}</p>
+			{{/if}}
+		{{/author}}
+		</section>
+	</footer>
+	{{/post}}
+	</article>
+</main>

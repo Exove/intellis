@@ -1,0 +1,256 @@
+/**
+ * Main screen CSS for Exportance theme.
+ * (C) Joonas From, 2014, http://www.tulikukka.com/
+ **/
+
+@import url("reset.css");
+@import url("content.css");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,300,700");
+
+/**
+ * Basic styles. These are overrides and additions for content.css
+ **/
+
+html {
+	background-color: #E1E1E1; /* This fixes the footer from "rising" */
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	font-size: 1.50rem;
+	font-weight: 300;
+	background-color: #FBFBFB;
+	color: #383838;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Lato", serif;
+	font-weight: 700;
+	line-height: 1.25;
+}
+
+h1 {
+	line-height: 1;
+}
+
+a { text-decoration: none; }
+
+a:link,
+a:visited { color: #4972B7; }
+
+a:hover { text-decoration: underline; }
+
+pre, code {
+	background-color: #E7E7E7;
+}
+
+blockquote {
+	background-color: #E7E7E7;
+	border-left: 0.5em solid #BEBEBE;
+}
+
+hr {
+	border-top: 1px solid #E7E7E7;
+	border-bottom: 1px solid #E7E7E7;
+}
+
+/**
+ * Body parts (tsihihi)
+ **/
+
+body > header {
+	background-color: #c3261f;
+	background-size: cover;
+	text-align: center;
+	padding: 6rem 5%;
+	color: #F3F3F3;
+}
+
+body > header h2 {
+	text-transform: uppercase;
+	letter-spacing: 0;
+}
+
+body > main {
+	margin: 3rem auto 3rem auto;
+}
+
+body > footer {
+	background-color: #E1E1E1;
+	color: #383838;
+	padding: 1rem;
+}
+
+/**
+ * Special styles
+ **/
+
+/* Blog logo handling */
+body > header .logo {
+	max-width: 100px;
+	position: absolute;
+	top: 25px;
+	left: 25px;
+}
+
+/* Remove margins from header elements */
+body > header > * {
+	margin: 0;
+}
+
+/* Link color overrides */
+body > header a:link,
+body > header a:visited,
+body > header a:hover,
+body > footer a:link,
+body > footer a:visited,
+body > main h2 a:link,
+body > main h2 a:visited,
+body > main .tags a:link,
+body > main .tags a:visited,
+body > main .author a:link,
+body > main .author a:visited {
+	color: inherit;
+}
+
+body > footer a:hover,
+body > main h2 a:hover,
+body > main .tags a:hover,
+body > main .author a:hover {
+	color: #4972B7;
+	text-decoration: underline;
+}
+
+body > footer > * {
+	display: block;
+	margin: 0;
+}
+
+.date {
+	margin: 0;
+}
+
+.date time {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: #5e5e5e;
+}
+
+/* Meta information of posts */
+.tags {
+	margin: 1rem 0;
+}
+
+.tags a {
+	margin-right: 5px;
+}
+
+.tags a:link,
+.tags a:visited {
+	background-color: gray;
+	padding: 5px;
+	font-size: 1.5rem;
+	color: white !important;
+}
+
+.tags a:hover {
+	background-color: #202020;
+	color: white;
+	text-decoration: none;
+}
+
+.author .avatar {
+	background-color: #E1E1E1;
+	border-radius: 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.summary .author {
+	margin-top: 15px;
+}
+
+.summary .author .avatar {
+	width: 50px;
+	height: 50px;
+	background-size: 50px auto;
+	float: left;
+	margin-right: 15px;
+}
+
+.full .author .avatar {
+	width: 200px;
+	height: 200px;
+	background-size: 200px auto;
+	margin: 0 auto;
+}
+
+.author .avatar img {
+	display: none;
+}
+
+.summary .author .name {
+	line-height: 50px;
+}
+
+/* Adding dots to a summary */
+section.summary > :last-child:after {
+	content: "...";
+}
+
+/* Pagination */
+.pagination {
+	position: relative;
+}
+
+.pagination .newer-posts {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.pagination .older-posts {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.pagination .page-number {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/** Other links **/
+
+.post .read-more { color: #4972B7; }
+
+.post .read-more:hover { text-decoration: underline; }
+
+/** "Responsive" stuff **/
+
+@media only screen and (max-width: 900px) {
+	body > main {
+		margin-left: 1em;
+		margin-right: 1em;
+	}
+}
+
+@media only screen and (min-width: 900px) {
+	body > main {
+		max-width: 800px;
+	}
+	
+	body > footer > * {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 800px;
+	}
+}
+
+/**
+ * Something completely different
+ **/
+
+blockquote p:last-child { margin: 0; } /* Ghost wants to put p tags inside blockquotes. FYNE! */

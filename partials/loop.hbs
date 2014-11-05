@@ -1,0 +1,31 @@
+{{#foreach posts}}
+<article class="{{post_class}} summary">
+	<header>
+		<p class="date">
+			<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM D, YYYY"}}</time>
+		</p>
+		<h2>
+			<a href="{{url}}">{{{title}}}</a>
+		</h2>
+		{{#author}}
+		<section class="author">
+			{{#if image}}
+			<a href="{{url}}">
+				<figure class="avatar" style="background-image: url('{{image}}')">
+					<img src="{{image}}" alt="avatar" />
+				</figure>
+			</a>
+			{{/if}}
+			<p class="name"><a href="{{url}}">{{name}}</a></h4>
+		</section>
+		{{/author}}
+	</header>
+	<section class="summary">
+		{{content words="50"}}
+	</section>
+	<p><a class="read-more" href="{{url}}">Read more &raquo;</a></p>
+</article>
+<hr />
+{{/foreach}}
+
+{{pagination}}

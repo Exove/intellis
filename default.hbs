@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+		{{! Document Settings }}
+		<meta charset="utf-8" />
+
+		{{! Page Meta }}
+		<title>{{meta_title}}</title>
+		<meta name="description" content="{{meta_description}}" />
+
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+		<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{{asset "css/print.css"}}" media="print" />
+
+		{{ghost_head}}
+</head>
+<body>
+		{{#if @blog.cover}}
+		<header style="background-image: url({{@blog.cover}})">
+		{{else}}
+		<header>
+		{{/if}}
+		{{#if @blog.logo}}
+			<a href="{{@blog.url}}">
+				<img class="logo" src="{{@blog.logo}}" alt="Logo" title="{{@blog.title}}"/>
+			</a>
+			{{/if}}
+			<h2>
+				<a href="{{@blog.url}}">{{@blog.title}}</a>
+			</h2>
+			<p class="blog-description">{{@blog.description}}</p>
+		</header>
+		{{{body}}}
+		<footer>
+				<p class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</p>
+				<a class="subscribe" href="{{@blog.url}}/rss/">RSS</a>
+		</footer>
+		{{ghost_foot}}
+</body>
+</html>
