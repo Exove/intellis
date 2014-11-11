@@ -50,12 +50,15 @@ ol li { list-style-type: decimal; }
 
 img { max-width: 100%; }
 
-pre, code {
+code {
 	font-family: monospace;
-	font-size: 1.00rem;
+}
+
+pre code {
 	white-space: pre-wrap;
 	width: 100%;
 	tab-size: 2;
+	font-size: 1.00rem;
 }
 
 pre {
