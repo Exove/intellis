@@ -182,7 +182,7 @@ body > footer > * {
 .full .author .avatar {
 	width: 200px;
 	height: 200px;
-	background-size: 200px auto;
+	background-size: auto 200px;
 	margin: 0 auto;
 }
 
